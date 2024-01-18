@@ -16,11 +16,8 @@ function InvoiceInfo({ onDelete }) {
     const location = useLocation()
     const dispatch = useDispatch()
 
-
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
     const [isEditOpen, setIsEditOpen] = useState(false)
-
-
 
     const invoiceId = location.search.substring(1)
     const onMakePaidClick = () => {
@@ -117,7 +114,6 @@ function InvoiceInfo({ onDelete }) {
                                 <h1 className=' dark:text-white text-lg font-semibold'>
                                     {invoice.clientEmail}
                                 </h1>
-
                             </div>
 
                         </div>
@@ -172,6 +168,7 @@ function InvoiceInfo({ onDelete }) {
                             ))}
 
                         </div>
+
                         <div className=' p-10 font-semibold text-white rounded-lg rounded-t-none justify-between flex dark:bg-black bg-gray-700 '>
                             <h3 className=' text-xl '>
                                 Amount Due
@@ -180,7 +177,6 @@ function InvoiceInfo({ onDelete }) {
                             <h1 className=' text-3xl'>
                                 £{invoice.total}
                             </h1>
-
                         </div>
 
                     </div>
