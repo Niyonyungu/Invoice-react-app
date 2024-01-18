@@ -17,8 +17,6 @@ function App() {
 
   return (
     <div className=' dark:bg-[#141625] duration-300 min-h-screen bg-[#f8f8fb]'>
-   
-
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
           < Route element={<Center />} path='' />
