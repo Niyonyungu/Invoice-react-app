@@ -8,6 +8,7 @@ import invoiceSlice from '../redux/invoiceSlice'
 import formatDate from '../functions/formatDate'
 import DeleteModal from './DeleteModal'
 import CreateInvoice from './CreateInvoice'
+import { motion } from "framer-motion";
 
 
 function InvoiceInfo({ onDelete }) {
@@ -32,20 +33,15 @@ function InvoiceInfo({ onDelete }) {
 
     }, [invoiceId, onMakePaidClick])
 
-
-
     const onDeleteButtonClick = () => {
         navigate('/')
         setIsDeleteModalOpen(false)
         onDelete(invoiceId)
     }
 
-
-
     const invoice = useSelector((state) => state.invoices.invoiceById)
 
     console.log(invoice)
-
     return (
         <div>
             {invoice ? <motion.div
@@ -62,7 +58,6 @@ function InvoiceInfo({ onDelete }) {
                             Go back
                         </p>
                     </button>
-
                     <div className=' mt-8 rounded-lg w-full flex items-center justify-between px-6 py-6 bg-white dark:bg-[#1e2139]'>
                         <div className=' flex space-x-2 justify-between md:justify-start md:w-auto w-full items-center'>
                             <h1 className=' text-gray-600 dark:text-gray-400'>
@@ -76,11 +71,8 @@ function InvoiceInfo({ onDelete }) {
                             {invoice.status === 'pending' &&
                                 <button onClick={onMakePaidClick} className=' ml-3 text-center  text-white bg-[#7c5dfa] hover:opacity-80 p-3 px-7 rounded-full'>Make as Paid</button>
                             }
-
                         </div>
                     </div>
-
-
                     <div className=' mt-4 rounded-lg w-full  px-6 py-6 bg-white dark:bg-[#1e2139]'>
 
                         <div className=' flex flex-col md:flex-row items-start justify-between w-full '>
